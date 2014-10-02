@@ -1,17 +1,17 @@
-var moment = require("../../moment");
+var moment = require('../../moment');
 
 exports.stringPrototype = {
     setUp : function (done) {
         moment.createFromInputFallback = function () {
-            throw new Error("input not handled by moment");
+            throw new Error('input not handled by moment');
         };
         done();
     },
 
-    "string prototype overrides call" : function (test) {
+    'string prototype overrides call' : function (test) {
         test.expect(1);
 
-        moment.lang('en');
+        moment.locale('en');
         var prior = String.prototype.call, b;
         String.prototype.call = function () {
             return null;
