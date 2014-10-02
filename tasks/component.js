@@ -6,6 +6,6 @@ module.exports = function (grunt) {
         config.scripts.unshift('language-loader.js');
         config.scripts.unshift('moment.js');
 
-        grunt.file.write('component.json', JSON.stringify(config, true, 2));
+        grunt.file.write('component.json', JSON.stringify(config, true, 2) + '\n');
     });
 };
