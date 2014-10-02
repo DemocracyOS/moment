@@ -24,7 +24,7 @@
             "scripts": [
                 "moment.js",
                 "language-loader.js",
-                "lang/*.js"
+                "locale/*.js"
             ]
         }
     }

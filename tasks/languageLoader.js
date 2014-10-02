@@ -1,15 +1,15 @@
 module.exports = function (grunt) {
     grunt.registerTask('languageLoader', function() {
 
-        var langFiles = grunt.file.expand('lang/*.js');
+        var langFiles = grunt.file.expand('locale/*.js');
         var buf = [];
         buf.push('// don\'t touch this file, it\'s generated\n');
-        
+
         buf.push('var languages = {\n');
         var i=0;
         for (i; i<langFiles.length; i++) {
             var item = langFiles[i];
-            var key = item.match(/lang\/(.*)\.js/)[1];
+            var key = item.match(/locale\/(.*)\.js/)[1];
             buf.push('  "'+key+'": ');
             buf.push('function() {return require("./'+item+'");}');
             buf.push(',\n');
